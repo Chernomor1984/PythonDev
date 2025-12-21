@@ -1,0 +1,42 @@
+from Roles import User
+from Roles import UserManager
+from UserDefinedExceptions import UserAlreadyExistsError
+from UserDefinedExceptions import UserNotFoundError
+
+userManager = UserManager()
+
+johnny = User("Johhny", "johnny@gmail.com", 30)
+bobby = User("Bobby", "bobby@gmail.com", 20)
+billy = User("William", "billy@gmail.com", 22)
+william = User("William", "william@gmail.com", 40)
+
+
+def add_user(user):
+    try:
+        userManager.add_user(user)
+    except UserAlreadyExistsError as e:
+        print(e)
+
+
+def remove_user(username):
+    try:
+        userManager.remove_user(username)
+    except UserNotFoundError as e:
+        print(e)
+
+
+def find_user(username):
+    try:
+        userManager.find_user(username)
+    except UserNotFoundError as e:
+        print(e)
+
+
+add_user(johnny)
+add_user(bobby)
+add_user(billy)
+add_user(william)
+remove_user(billy.username)
+remove_user("donny")
+find_user(bobby.username)
+find_user("arny")
