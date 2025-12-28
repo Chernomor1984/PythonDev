@@ -1,0 +1,66 @@
+23-01-2026 02:34:15
+Создана директория project_root/data/raw
+
+23-01-2026 02:34:15
+Создана директория project_root/data/processed
+
+23-01-2026 02:34:15
+project_root/logs уже существует
+
+23-01-2026 02:34:15
+Создана директория project_root/backups
+
+23-01-2026 02:34:15
+Создана директория project_root/output
+
+23-01-2026 02:34:15
+Данные успешно записаны в project_root/data/raw/utf_file.txt
+
+23-01-2026 02:34:15
+Данные успешно записаны в project_root/data/raw/ascii_file.txt
+
+23-01-2026 02:34:15
+Данные успешно записаны в project_root/data/raw/latin_1_file.txt
+
+23-01-2026 02:34:15
+Данные успешно записаны в project_root/data/processed/ascii_file_processed.txt
+
+23-01-2026 02:34:15
+Данные успешно записаны в project_root/data/processed/latin_1_file_processed.txt
+
+23-01-2026 02:34:15
+Данные успешно записаны в project_root/data/processed/utf_file_processed.txt
+
+23-01-2026 02:34:15
+Объект [{'file_name': 'ascii_file_processed.txt', 'file_size': 445, 'last_modification_date': 'Fri Jan 23 02:34:15 2026', 'raw_content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'processed_content': 'lOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. uT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT. dUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR. eXCEPTEUR SINT OCCAECAT CUPIDATAT NON PROIDENT, SUNT IN CULPA QUI OFFICIA DESERUNT MOLLIT ANIM ID EST LABORUM.'}, {'file_name': 'latin_1_file_processed.txt', 'file_size': 27, 'last_modification_date': 'Fri Jan 23 02:34:15 2026', 'raw_content': 'Hello, World! Ça va? Café £', 'processed_content': 'hELLO, wORLD! çA VA? cAFÉ £'}, {'file_name': 'utf_file_processed.txt', 'file_size': 778, 'last_modification_date': 'Fri Jan 23 02:34:15 2026', 'raw_content': 'Равным образом, высокотехнологичная концепция общественного уклада способствует подготовке и реализации модели развития. Принимая во внимание показатели успешности, сплочённость команды профессионалов требует анализа позиций, занимаемых участниками в отношении поставленных задач. Как принято считать, интерактивные прототипы и по сей день остаются уделом либералов, которые жаждут быть описаны максимально подробно.', 'processed_content': 'рАВНЫМ ОБРАЗОМ, ВЫСОКОТЕХНОЛОГИЧНАЯ КОНЦЕПЦИЯ ОБЩЕСТВЕННОГО УКЛАДА СПОСОБСТВУЕТ ПОДГОТОВКЕ И РЕАЛИЗАЦИИ МОДЕЛИ РАЗВИТИЯ. пРИНИМАЯ ВО ВНИМАНИЕ ПОКАЗАТЕЛИ УСПЕШНОСТИ, СПЛОЧЁННОСТЬ КОМАНДЫ ПРОФЕССИОНАЛОВ ТРЕБУЕТ АНАЛИЗА ПОЗИЦИЙ, ЗАНИМАЕМЫХ УЧАСТНИКАМИ В ОТНОШЕНИИ ПОСТАВЛЕННЫХ ЗАДАЧ. кАК ПРИНЯТО СЧИТАТЬ, ИНТЕРАКТИВНЫЕ ПРОТОТИПЫ И ПО СЕЙ ДЕНЬ ОСТАЮТСЯ УДЕЛОМ ЛИБЕРАЛОВ, КОТОРЫЕ ЖАЖДУТ БЫТЬ ОПИСАНЫ МАКСИМАЛЬНО ПОДРОБНО.'}] успешно сериализован по пути project_root/output/processed_data.json
+
+23-01-2026 02:34:15
+project_root/backups/backup_20260123.zip создан
+
+23-01-2026 02:34:15
+project_root/backups/backup_20260123.zip.zip успешно разархивирован в project_root/restored
+
+23-01-2026 02:34:15
+Объект [Файл: ascii_file_processed.txt
+Путь: project_root/data/processed/ascii_file_processed.txt
+Размер: 445 байт
+Создан: 22-01-2026 23:34
+Модифицирован: 22-01-2026 23:34, Файл: latin_1_file_processed.txt
+Путь: project_root/data/processed/latin_1_file_processed.txt
+Размер: 27 байт
+Создан: 22-01-2026 23:34
+Модифицирован: 22-01-2026 23:34, Файл: utf_file_processed.txt
+Путь: project_root/data/processed/utf_file_processed.txt
+Размер: 778 байт
+Создан: 22-01-2026 23:34
+Модифицирован: 22-01-2026 23:34] успешно сериализован по пути project_root/output/file_info.json
+
+23-01-2026 02:34:15
+{'name': 'ascii_file_processed.txt', 'path': 'project_root/data/processed/ascii_file_processed.txt', 'size': 445, 'creation_date': '2026-01-22T23:34:15.092258+00:00', 'last_modification_date': '2026-01-22T23:34:15.092258+00:00'} валиден
+
+23-01-2026 02:34:15
+{'name': 'latin_1_file_processed.txt', 'path': 'project_root/data/processed/latin_1_file_processed.txt', 'size': 27, 'creation_date': '2026-01-22T23:34:15.093977+00:00', 'last_modification_date': '2026-01-22T23:34:15.093977+00:00'} валиден
+
+23-01-2026 02:34:15
+{'name': 'utf_file_processed.txt', 'path': 'project_root/data/processed/utf_file_processed.txt', 'size': 778, 'creation_date': '2026-01-22T23:34:15.095409+00:00', 'last_modification_date': '2026-01-22T23:34:15.095409+00:00'} валиден
+

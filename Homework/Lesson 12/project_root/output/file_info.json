@@ -1,0 +1,23 @@
+[
+    {
+        "name": "ascii_file_processed.txt",
+        "path": "project_root/data/processed/ascii_file_processed.txt",
+        "size": 445,
+        "creation_date": "2026-01-22T23:34:15.092258+00:00",
+        "last_modification_date": "2026-01-22T23:34:15.092258+00:00"
+    },
+    {
+        "name": "latin_1_file_processed.txt",
+        "path": "project_root/data/processed/latin_1_file_processed.txt",
+        "size": 27,
+        "creation_date": "2026-01-22T23:34:15.093977+00:00",
+        "last_modification_date": "2026-01-22T23:34:15.093977+00:00"
+    },
+    {
+        "name": "utf_file_processed.txt",
+        "path": "project_root/data/processed/utf_file_processed.txt",
+        "size": 778,
+        "creation_date": "2026-01-22T23:34:15.095409+00:00",
+        "last_modification_date": "2026-01-22T23:34:15.095409+00:00"
+    }
+]
