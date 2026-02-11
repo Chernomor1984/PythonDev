@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ShopMaster{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'catalog:product_list' %}" style="text-decoration: none; color: inherit;">ShopMaster</a></h1>
+    </header>
+    
+    <div class="container" style="display: flex; gap: 30px; max-width: 1200px; margin: 0 auto;">
+        <aside class="sidebar" style="width: 200px; flex-shrink: 0;">
+            <h3>Категории</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li {% if not category %}class="selected"{% endif %}>
+                    <a href="{% url 'catalog:product_list' %}">Все товары</a>
+                </li>
+
+                {% for c in categories %}
+                    <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+                        <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </aside>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2026 ShopMaster Inc. All rights reserved</p>
+    </footer>
+</body>
+</html>

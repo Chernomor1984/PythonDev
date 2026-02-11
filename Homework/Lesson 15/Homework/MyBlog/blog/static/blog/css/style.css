@@ -1,0 +1,186 @@
+body {
+        background-color: #e2e9e9; 
+        background: linear-gradient(135deg, #e2e9e9 0%, #d1dbdb 100%);
+        background-attachment: fixed;
+        margin: 0;
+        padding: 40px 20px;
+        font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 35px;
+        color: #1a1a1a;
+    }
+
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        text-decoration: none;
+        padding: 8px 18px;
+        border: 1px solid #d1d1d1;
+        border-radius: 25px;
+        color: #555;
+        background: #ffffff;
+        transition: all 0.2s ease;
+        font-weight: 500;
+    }
+
+    .btn:hover {
+        border-color: #007bff;
+        color: #007bff;
+        background: #f8f9ff;
+    }
+
+    .btn.active {
+        background: #007bff;
+        color: white;
+        border-color: #007bff;
+        box-shadow: 0 4px 10px rgba(0,123,255,0.25);
+    }
+
+    .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .post-card {
+        background: #ffffff;
+        border: none;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .post-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .post-card h2 {
+        margin: 0 0 15px 0;
+        font-size: 1.35rem;
+        color: #111;
+    }
+
+    .post-card p {
+        flex-grow: 1;
+        color: #555;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .post-meta {
+        padding-top: 15px;
+        border-top: 1px solid #f0f0f0;
+        font-size: 0.85rem;
+        color: #888;
+    }
+
+    .pagination {
+        margin-top: 50px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .pagination a, .pagination span {
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        text-decoration: none;
+        color: #333;
+        background: white;
+        transition: 0.2s;
+    }
+
+    .pagination a:hover {
+        background: #f0f0f0;
+    }
+
+    .pagination .current {
+        background: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+    .post-link {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s ease;
+    }
+
+    .post-link:hover {
+        color: #007bff;
+    }
+
+    /* Detail */
+    .post-full {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    /* Заголовок внутри статьи */
+    .post-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .post-header h1 {
+        font-size: 2.4rem;
+        margin: 0 0 15px 0;
+        color: #1a1a1a;
+        line-height: 1.2;
+    }
+
+    /* Основной текст статьи */
+    .post-content {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    /* Стилизация абзацев */
+    .post-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Кнопка "Назад" */
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 30px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .post-divider {
+        border: 0;
+        border-top: 1px solid #eee;
+        margin: 30px 0;
+    }
+
+    .post-full .post-card {
+        transform: none !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+        cursor: default;
+    }
+
+    .post-full .post-card:hover {
+        transform: none !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+    }

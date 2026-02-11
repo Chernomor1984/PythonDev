@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Товары</h2>
+<ul>
+    {% for product in products %}
+        <li>
+            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+            {{ product.price }} $
+        </li>
+    {%empty%}
+        <li>Товаров данной категории не обнаружено</li>
+    {% endfor %}
+</ul>
+{% endblock %}
