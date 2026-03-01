@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+
+{% block page_class %}is-home{% endblock %}
+
+{% block title %}Главная | База Приколов{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Блог имени «Ctrl+C, Ctrl+V» ☕️</h1>
+        <p class="hero-text">
+            Добро пожаловать в место, где баги называют «фичами», 
+            а чашка кофе важнее, чем работающий сервер.
+        </p>
+
+        {% if last_post %}
+            <div class="last-post-badge">
+                <small>🔥 Свежак:</small>
+                <a href="{% url 'blog:post_detail' last_post.id %}">{{ last_post.title }}</a>
+            </div>
+        {% endif %}
+
+        <div class="hero-actions">
+            <a href="{% url 'blog:post_list' %}" class="btn btn-primary">Показать шедевры</a>
+            <a href="{% url 'blog:about' %}" class="btn btn-secondary">Кто этот гений?</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

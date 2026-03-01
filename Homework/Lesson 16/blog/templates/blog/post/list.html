@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% block page_class %}is-list{% endblock %}
+
+{% block title %}Список всех постов{% endblock %}
+
+{% block content %}
+    <h1>Наши публикации</h1>
+    <a href="{% url 'blog:post_create' %}" class="btn btn-primary">+ Написать пост</a>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h3>
+                    <a href="{% url 'blog:post_detail' post.id %}" class="post-title-link">
+                        {{ post.title }}
+                    </a>
+                </h3>
+                
+                <p>{{ post.summary|default:"Краткое описание отсутствует" }}</p>
+                
+                {% if post.tags %}
+                    <small>Теги: {{ post.tags }}</small><br>
+                {% endif %}
+                
+                <small>Опубликовано: {{ post.created_at|date:"d.m.Y H:i" }}</small>
+                
+                <p>
+                    <a href="{% url 'blog:post_detail' post.id %}">Читать полностью</a>
+                </p>
+                <hr>
+            </li>
+        {% empty %}
+            <li>Пока постов нет. Станьте первым автором!</li>
+        {% endfor %}
+    </ul>
+
+    <nav>
+        <a href="{% url 'blog:home' %}">На главную</a>
+    </nav>
+{% endblock %}

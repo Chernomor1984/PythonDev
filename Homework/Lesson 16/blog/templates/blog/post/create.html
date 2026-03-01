@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+{% block page_class %}is-create{% endblock %}
+
+{% block title %}
+    {% if object %}Редактирование: {{ object.title }}{% else %}Новый пост{% endif %}
+{% endblock %}
+
+{% block content %}
+    <h1>{% if object %}Редактирование{% else %}Создание{% endif %} поста</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            <div class="errors-header">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        {{ form.as_p }}
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                {% if object %}Сохранить изменения{% else %}Опубликовать{% endif %}
+            </button>
+        </div>
+    </form>
+
+    <hr>
+    {# Если реферер совпадает с текущим путем, значит был рефреш #}
+    {% if request.META.HTTP_REFERER and request.META.HTTP_REFERER != request.build_absolute_uri %}
+        <a href="{{ request.META.HTTP_REFERER|default:'/' }}">← Назад</a>
+    {% else %}
+        <a href="{% url 'blog:post_list' %}">← Назад к списку</a>
+    {% endif %}
+{% endblock %}

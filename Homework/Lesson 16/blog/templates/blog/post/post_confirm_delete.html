@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Удаление: {{ object.title }}{% endblock %}
+
+{% block content %}
+<div class="post-card">
+    <h1>Вы уверены?</h1>
+    <p>Вы собираетесь безвозвратно удалить пост: <strong>«{{ object.title }}»</strong>.</p>
+    <p>Восстановить его после этого будет невозможно (даже через кофемашину ;-)).</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Да, удалить навсегда</button>
+        <a href="{% url 'blog:post_detail' object.id %}" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+
+{% block page_class %}is-detail{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<article class="post-card">
+    <header class="post-header">
+        <h1>{{ post.title }}</h1>
+        <div class="post-meta">
+            <span class="post-date">📅 {{ post.created_at|date:"d.m.Y в H:i" }}</span>
+        </div>
+    </header>
+    
+    <div class="post-summary-box">
+        <strong>Краткий экскурс:</strong> 
+        <p>{{ post.summary|default:"Тут должно было быть что-то умное, но автор пролил кофе." }}</p>
+    </div>
+    
+    <div class="post-body">
+        {{ post.content|linebreaks }}
+    </div>
+
+    {% if post.tags %}
+        <div class="post-tags">
+            <strong>Теги:</strong> 
+            <span class="tag-list">{{ post.tags }}</span>
+        </div>
+    {% endif %}
+
+    <footer class="post-footer">
+        <div class="post-admin-actions">
+            <a href="{% url 'blog:post_update' post.id %}" class="btn btn-secondary">✍️ Редактировать</a>
+            <a href="{% url 'blog:post_delete' post.id %}" class="btn btn-danger">🗑 Удалить</a>
+        </div>
+        
+        <nav class="back-nav">
+            {# Если реферер совпадает с текущим путем, значит был рефреш #}
+            {% if request.META.HTTP_REFERER and request.META.HTTP_REFERER != request.build_absolute_uri %}
+                <a href="{{ request.META.HTTP_REFERER }}" class="back-link">← Вернуться назад</a>
+            {% else %}
+                <a href="{% url 'blog:post_list' %}" class="back-link">← К списку постов</a>
+            {% endif %}
+        </nav>
+    </footer>
+</article>
+{% endblock %}

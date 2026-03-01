@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <title>{% block title %}Мой Блог{% endblock %}</title>
+</head>
+
+<body class="{% block page_class %}{% endblock %}">
+
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="{% url 'blog:home' %}" class="nav-link home-link">Главная</a>
+                <a href="{% url 'blog:post_list' %}" class="nav-link list-link">Все посты</a>
+                <a href="{% url 'blog:post_create' %}" class="nav-link create-link">Создать пост</a>
+                <a href="{% url 'blog:about' %}" class="nav-link about-link">О нас</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <hr>
+            <p>&copy; 2026 Блог имени Ctrl+C</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
