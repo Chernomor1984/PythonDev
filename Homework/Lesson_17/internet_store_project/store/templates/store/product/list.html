@@ -1,0 +1,35 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Каталог товаров{% endblock %}
+
+{% block content %}
+<section class="catalog-section">
+    <h1 class="page-title">Наши товары</h1>
+
+    <div class="product-grid">
+        {% for product in products %}
+            <article class="product-card">
+                
+                <div class="product-image-wrapper">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                    {% else %}
+                        <div class="no-image-placeholder">📷 Фото в пути</div>
+                    {% endif %}
+                </div>
+                
+                <div class="product-info">
+                    <h2 class="product-name">{{ product.name }}</h2>
+                    <p class="product-price">{{ product.price|floatformat:2 }} ₽</p>
+                    <a href="{% url 'store:product_detail' product.id %}" class="btn-details">Подробнее</a>
+                </div>
+
+            </article>
+        {% empty %}
+            <div class="empty-state">
+                <p>Товаров пока нет. Завезите на склад! 📦</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

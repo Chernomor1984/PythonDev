@@ -1,0 +1,299 @@
+/* CSS Reset (сброс стилей): эти отступы применяются ко всем элементам на странице, без исключений */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Системный шрифт Apple */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f5f5f7; /* фон */
+    color: #1d1d1f;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Footer всегда внизу */
+}
+
+/* Шапка (Navigation Bar) */
+.site-header {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px); /* блюр */
+    -webkit-backdrop-filter: blur(15px); /* Для Safari */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #1d1d1f;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #0071e3;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Главный контейнер */
+.content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Каталог товаров */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* GRID-СЕТКА */
+.product-grid {
+    display: grid;
+    /* Создаёт столько колонок, сколько влезет. 
+    Минимальная ширина ячейки 280px, максимальная - 1 часть (1fr) */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px; /* Отступы между ячейками */
+}
+
+/* Карточка товара */
+.product-card {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация при наведении */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Приподнимаем карточку */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-image-wrapper {
+    height: 250px;
+    background: #fbfbfd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* contentMode = .scaleAspectFit */
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #86868b;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.btn-details {
+    display: block;
+    text-align: center;
+    background: #0071e3;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 20px; /* Круглая кнопка */
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.btn-details:hover {
+    background: #005bb5;
+}
+
+/* Детальная страница товара */
+.product-detail-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Ровно две колонки (50% / 50%) */
+    gap: 50px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.detail-image-section {
+    background: #fbfbfd;
+    border-radius: 18px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-image {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.detail-info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.detail-price {
+    font-size: 1.5rem;
+    color: #86868b;
+    margin-bottom: 30px;
+}
+
+.detail-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.detail-meta {
+    font-size: 0.9rem;
+    color: #86868b;
+    margin-bottom: 30px;
+}
+
+.btn-back {
+    display: inline-block;
+    background: #e8e8ed;
+    color: #1d1d1f;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.btn-back:hover {
+    background: #d2d2d7;
+}
+
+/* FOOTER */
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background: #f5f5f7;
+    color: #86868b;
+    font-size: 0.9rem;
+}
+
+/* MAIN */
+.welcome-section {
+    max-width: 800px;
+    margin: 100px auto; /* Центрируем и делаем отступы */
+    text-align: center; /* Весь текст по центру */
+    padding: 0 20px;
+    animation: fadeIn 0.8s ease-out; /* Плавное появление */
+}
+
+.main-heading {
+    font-size: 4rem; /* Огромный заголовок */
+    font-weight: 700;
+    letter-spacing: -0.05em; /* Cжимаем расстояние между буквами */
+    margin-bottom: 24px;
+    color: #1d1d1f;
+}
+
+.description {
+    font-size: 1.5rem;
+    color: #86868b;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* Кнопка перехода в каталог */
+.btn-primary {
+    display: inline-block;
+    background-color: #0071e3;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 980px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 113, 227, 0.2); /* Свечение */
+}
+
+/* При наводении мышку на кнопку */
+.btn-primary:hover {
+    background-color: #005bb5;
+    transform: scale(1.02); /* Увеличиваем */
+    box-shadow: 0 6px 20px rgba(0, 113, 227, 0.4); /* Усиливаем свечение */
+}
+
+/* Адаптив: если открыли с Айфона, уменьшаем шрифты */
+@media (max-width: 768px) {
+    .welcome-section {
+        margin: 60px auto;
+    }
+    .main-heading {
+        font-size: 2.5rem;
+    }
+    .description {
+        font-size: 1.2rem;
+    }
+}
+
+/* Простая анимация появления для .welcome-section */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 768px) {
+    .product-detail-page {
+        grid-template-columns: 1fr; /* Если экран узкий, схлопываем деталку в 1 колонку */
+        padding: 20px;
+    }
+}

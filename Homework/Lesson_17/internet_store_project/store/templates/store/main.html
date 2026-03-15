@@ -1,0 +1,17 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Главная страница | Apple Store (почти){% endblock %}
+
+{% block content %}
+<div class="welcome-section">
+    
+    <h1 class="main-heading">Добро пожаловать в будущее.👋</h1>
+    
+    <p class="description">
+        Здесь мы продаем самые классные штуки, которые делают твою жизнь проще, быстрее и чуточку магической. Это не просто магазин, это витрина твоих новых возможностей.
+    </p>
+    
+    <a href="{% url 'store:product_list' %}" class="btn-primary">Перейти в каталог</a>
+
+</div>
+{% endblock %}

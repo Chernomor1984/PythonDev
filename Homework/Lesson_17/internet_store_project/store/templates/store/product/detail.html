@@ -1,0 +1,32 @@
+{% extends 'store/base.html' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<article class="product-detail-page">
+    
+    <div class="detail-image-section">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="detail-image">
+        {% else %}
+            <div class="no-image-placeholder detail-placeholder">📷 Фото в пути</div>
+        {% endif %}
+    </div>
+
+    <div class="detail-info-section">
+        <h1 class="detail-title">{{ product.name }}</h1>
+        <p class="detail-price">{{ product.price|floatformat:2 }} ₽</p>
+        
+        <div class="detail-description">
+            <p>{{ product.description|linebreaksbr }}</p> 
+        </div>
+        
+        <p class="detail-meta">Добавлено: {{ product.created_at|date:"d.m.Y" }}</p>
+        
+        <div class="detail-actions">
+            <a href="{% url 'store:product_list' %}" class="btn-back">🔙 Назад в каталог</a>
+        </div>
+    </div>
+
+</article>
+{% endblock %}
